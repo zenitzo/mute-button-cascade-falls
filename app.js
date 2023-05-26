@@ -1,5 +1,6 @@
 let count = 0;
 let thisCount = 0;
+let isMuted = true; // New variable to track mute state
 
 const handlers = {
   startInitFunctionOrder(data) {
@@ -29,15 +30,13 @@ window.addEventListener("message", function (e) {
   (handlers[e.data.eventName] || function () {})(e.data);
 });
 
-// TESTING
-
 function toggleMute() {
   var audio = document.getElementById("audio");
   var muteButton = document.getElementById("muteButton");
   var mutedIcon = document.getElementById("mutedIcon");
   var unmutedIcon = document.getElementById("unmutedIcon");
 
-  if (audio.muted) {
+  if (isMuted) {
     audio.muted = false;
     muteButton.classList.remove("muted");
     mutedIcon.style.display = "none";
@@ -48,4 +47,6 @@ function toggleMute() {
     unmutedIcon.style.display = "none";
     mutedIcon.style.display = "inline-block";
   }
+
+  isMuted = !isMuted; // Toggle the mute state
 }
