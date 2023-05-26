@@ -35,10 +35,13 @@ function toggleMute() {
   var audio = document.getElementById("audio");
   var speakerIcons = document.getElementsByClassName("speakerIcon");
 
-  audio.muted = !audio.muted;
-
-  // Toggle the active class on the speaker icons
-  for (var i = 0; i < speakerIcons.length; i++) {
-    speakerIcons[i].classList.toggle("active");
+  if (audio.muted) {
+    audio.muted = false;
+    speakerIcons[0].classList.remove("muted");
+    speakerIcons[1].classList.add("muted");
+  } else {
+    audio.muted = true;
+    speakerIcons[0].classList.add("muted");
+    speakerIcons[1].classList.remove("muted");
   }
 }
