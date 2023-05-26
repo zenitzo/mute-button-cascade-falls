@@ -34,12 +34,18 @@ window.addEventListener("message", function (e) {
 function toggleMute() {
   var audio = document.getElementById("audio");
   var muteButton = document.getElementById("muteButton");
+  var mutedIcon = document.getElementById("mutedIcon");
+  var unmutedIcon = document.getElementById("unmutedIcon");
 
   if (audio.muted) {
     audio.muted = false;
     muteButton.classList.remove("muted");
+    mutedIcon.style.display = "none";
+    unmutedIcon.style.display = "inline-block";
   } else {
     audio.muted = true;
     muteButton.classList.add("muted");
+    unmutedIcon.style.display = "none";
+    mutedIcon.style.display = "inline-block";
   }
 }
