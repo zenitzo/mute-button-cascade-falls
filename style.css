@@ -100,4 +100,10 @@ video {
   padding: 0;
 }
 
-/* <div class="loadbar"><div class="thingy"></div></div> */
+.svg {
+  display: none;
+}
+
+.show {
+  display: block;
+}
