@@ -81,7 +81,8 @@ video {
   transition: transform 0.2s ease-in-out;
 }
 
-#muteButton:hover .speakerIcon {
+#muteButton:hover #mutedIcon,
+#muteButton:hover #unmutedIcon {
   transform: scale(1.1); /* Hover animation: slightly larger size */
 }
 

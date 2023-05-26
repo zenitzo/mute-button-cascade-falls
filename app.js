@@ -1,6 +1,6 @@
 let count = 0;
 let thisCount = 0;
-let isMuted = true; // New variable to track mute state
+let isMuted = false;
 
 const handlers = {
   startInitFunctionOrder(data) {
@@ -30,6 +30,8 @@ window.addEventListener("message", function (e) {
   (handlers[e.data.eventName] || function () {})(e.data);
 });
 
+// TESTING
+
 function toggleMute() {
   var audio = document.getElementById("audio");
   var muteButton = document.getElementById("muteButton");
@@ -48,5 +50,5 @@ function toggleMute() {
     mutedIcon.style.display = "inline-block";
   }
 
-  isMuted = !isMuted; // Toggle the mute state
+  isMuted = !isMuted;
 }
