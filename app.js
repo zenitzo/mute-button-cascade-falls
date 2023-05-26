@@ -47,14 +47,14 @@ function toggleMute() {
 }
 
 function toggleSVGs() {
-  var svg1 = document.getElementsByClassName("svg1");
-  var svg2 = document.getElementsByClassName("svg2");
+  var svg1 = document.getElementById("svg1");
+  var svg2 = document.getElementById("svg2");
 
-  if (svg1.style.display === "show") {
-    svg1.style.display = "show";
-    svg2.style.display = "show";
+  if (svg1.classList.contains("show")) {
+    svg1.classList.remove("show");
+    svg2.classList.add("show");
   } else {
-    svg1.style.display = "show";
-    svg2.style.display = "show";
+    svg1.classList.add("show");
+    svg2.classList.remove("show");
   }
 }
