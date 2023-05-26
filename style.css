@@ -74,40 +74,30 @@ video {
   min-height: 100%;
 }
 
+/* TESTING */
+
 .speakerIcon {
   width: 30px;
   height: 30px;
   color: rgba(119, 119, 119, 0.694); /* Gray color */
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow */
 }
 
-.speakerIcon-container:hover .speakerIcon {
+.speakerIcon:hover {
   transform: scale(1.1); /* Hover animation: slightly larger size */
 }
 
 #muteButton {
+  /* Positioning properties */
   position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: transparent;
+  top: 20px; /* Adjust the top value to add desired margin */
+  left: 20px; /* Adjust the left value to add desired margin */
+  z-index: 9999; /* Ensure the button appears above other elements if necessary */
+  /* Remove background */
+  background: none;
   border: none;
-  outline: none;
-  cursor: pointer;
+  padding: 0;
 }
 
-#muteButton svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#unmutedIcon {
-  display: none;
-}
-
-#muteButton.muted #mutedIcon {
-  display: inline-block;
-}
-
-#muteButton.muted #unmutedIcon {
-  display: none;
-}
+/* <div class="loadbar"><div class="thingy"></div></div> */

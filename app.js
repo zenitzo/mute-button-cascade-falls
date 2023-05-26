@@ -1,6 +1,5 @@
 let count = 0;
 let thisCount = 0;
-let isMuted = false;
 
 const handlers = {
   startInitFunctionOrder(data) {
@@ -34,32 +33,15 @@ window.addEventListener("message", function (e) {
 
 function toggleMute() {
   var audio = document.getElementById("audio");
-  var muteButton = document.getElementById("muteButton");
-  var mutedIcon = document.getElementById("mutedIcon");
-  var unmutedIcon = document.getElementById("unmutedIcon");
+  var speakerIcons = document.getElementsByClassName("speakerIcon");
 
   if (audio.muted) {
     audio.muted = false;
-    muteButton.classList.remove("muted");
-    mutedIcon.style.display = "none";
-    unmutedIcon.style.display = "inline-block";
+    speakerIcons[0].classList.remove("muted");
+    speakerIcons[1].classList.add("muted");
   } else {
     audio.muted = true;
-    muteButton.classList.add("muted");
-    unmutedIcon.style.display = "none";
-    mutedIcon.style.display = "inline-block";
+    speakerIcons[0].classList.add("muted");
+    speakerIcons[1].classList.remove("muted");
   }
-}
-
-// Update SVG icons initially based on the muted state of the audio
-var audio = document.getElementById("audio");
-var mutedIcon = document.getElementById("mutedIcon");
-var unmutedIcon = document.getElementById("unmutedIcon");
-
-if (audio.muted) {
-  mutedIcon.style.display = "inline-block";
-  unmutedIcon.style.display = "none";
-} else {
-  mutedIcon.style.display = "none";
-  unmutedIcon.style.display = "inline-block";
 }
