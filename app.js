@@ -38,7 +38,7 @@ function toggleMute() {
   var mutedIcon = document.getElementById("mutedIcon");
   var unmutedIcon = document.getElementById("unmutedIcon");
 
-  if (isMuted) {
+  if (audio.muted) {
     audio.muted = false;
     muteButton.classList.remove("muted");
     mutedIcon.style.display = "none";
@@ -49,6 +49,17 @@ function toggleMute() {
     unmutedIcon.style.display = "none";
     mutedIcon.style.display = "inline-block";
   }
+}
 
-  isMuted = !isMuted;
+// Update SVG icons initially based on the muted state of the audio
+var audio = document.getElementById("audio");
+var mutedIcon = document.getElementById("mutedIcon");
+var unmutedIcon = document.getElementById("unmutedIcon");
+
+if (audio.muted) {
+  mutedIcon.style.display = "inline-block";
+  unmutedIcon.style.display = "none";
+} else {
+  mutedIcon.style.display = "none";
+  unmutedIcon.style.display = "inline-block";
 }
