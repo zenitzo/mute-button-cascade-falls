@@ -33,15 +33,13 @@ window.addEventListener("message", function (e) {
 
 function toggleMute() {
   var audio = document.getElementById("audio");
-  var speakerIcons = document.getElementsByClassName("speakerIcon");
+  var muteButton = document.getElementById("muteButton");
 
   if (audio.muted) {
     audio.muted = false;
-    speakerIcons[0].classList.remove("muted");
-    speakerIcons[1].classList.add("muted");
+    muteButton.classList.remove("muted");
   } else {
     audio.muted = true;
-    speakerIcons[0].classList.add("muted");
-    speakerIcons[1].classList.remove("muted");
+    muteButton.classList.add("muted");
   }
 }
