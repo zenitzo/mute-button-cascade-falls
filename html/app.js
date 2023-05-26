@@ -50,11 +50,11 @@ function toggleSVGs() {
   var svg1 = document.getElementById("svg1");
   var svg2 = document.getElementById("svg2");
 
-  if (svg1.style.display === "none") {
-    svg1.style.display = "inline-block";
-    svg2.style.display = "none";
-  } else {
-    svg1.style.display = "none";
+  if (svg2.style.display === "none") {
     svg2.style.display = "inline-block";
+    svg1.style.display = "none";
+  } else {
+    svg2.style.display = "none";
+    svg1.style.display = "inline-block";
   }
 }
